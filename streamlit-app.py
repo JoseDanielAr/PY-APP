@@ -11,8 +11,9 @@ import gdown
 import os
 import numpy as np
 
-file_url = 'https://drive.google.com/uc?id=1locdBqp8abUEl_NB_x8Q7tLEYOXute92'
-output_filename = 'model2.h5'
+#file_url = 'https://drive.google.com/uc?id=1locdBqp8abUEl_NB_x8Q7tLEYOXute92'
+file_url = 'https://drive.google.com/file/d/1wiDN9E89HDQ9EDH1D1b3soJP_1_UnGkV/'
+output_filename = 'modeloo.h5'
 
 gdown.download(file_url, output_filename, quiet=False)
 

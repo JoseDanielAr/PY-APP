@@ -31,6 +31,40 @@ st.markdown("<div style='font-size: 56px; color: black; text-align: center'>O</d
 st.markdown("<div style='font-size: 56px; color: black; text-align: center'></div>", unsafe_allow_html=True)
 st.markdown("<div style='font-size: 56px; color: black; text-align: center'></div>", unsafe_allow_html=True)
 
+uploaded_file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
+if uploaded_file:
+    st.image(uploaded_file)
+    print("existe picture")
+    with open ('input.jpg','wb') as file:
+          file.write(picture.getbuffer())
+          print("se guardo foto")
+    img = image.load_img('input.jpg', target_size=(150, 150))
+    img_array = image.img_to_array(img) / 255.0
+    img_array = np.expand_dims(img_array, axis=0)
+
+    prediction = model.predict(img_array)
+    predicted_class=np.argmax(prediction, axis=1)
+    print(predicted_class)
+    if predicted_class==8:
+         st.markdown("<div style='font-size: 56px; color: black; text-align: center'>Manzana</div>", unsafe_allow_html=True)
+    if predicted_class==0:
+         st.markdown("<div style='font-size: 56px; color: black; text-align: center'>Banano</div>", unsafe_allow_html=True)
+    if predicted_class==1:
+         st.markdown("<div style='font-size: 56px; color: black; text-align: center'>Cuchara</div>", unsafe_allow_html=True)
+    if predicted_class==2:
+         st.markdown("<div style='font-size: 56px; color: black; text-align: center'>Cucharon</div>", unsafe_allow_html=True)
+    if predicted_class==3:
+         st.markdown("<div style='font-size: 56px; color: black; text-align: center'>Cuchillo</div>", unsafe_allow_html=True)
+    if predicted_class==4:
+         st.markdown("<div style='font-size: 56px; color: black; text-align: center'>Encendedor</div>", unsafe_allow_html=True)
+    if predicted_class==5:
+         st.markdown("<div style='font-size: 56px; color: black; text-align: center'>Espatula</div>", unsafe_allow_html=True)
+    if predicted_class==6:
+         st.markdown("<div style='font-size: 56px; color: black; text-align: center'>Filtro</div>", unsafe_allow_html=True)
+    if predicted_class==7:
+         st.markdown("<div style='font-size: 56px; color: black; text-align: center'>Huevo</div>", unsafe_allow_html=True)
+    if predicted_class==9:
+         st.markdown("<div style='font-size: 56px; color: black; text-align: center'>Tijeras</div>", unsafe_allow_html=True)
 picture = st.camera_input("Por favor, tome una foto para utilizar el modelo.")
 if picture:
     st.image(picture)

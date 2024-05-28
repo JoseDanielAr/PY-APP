@@ -45,7 +45,7 @@ if uploaded_file:
     prediction = model.predict(img_array)
     predicted_class=np.argmax(prediction, axis=1)
     print(predicted_class)
-    
+
     if predicted_class==8:
          st.markdown("<div style='font-size: 56px; color: black; text-align: center'>Manzana</div>", unsafe_allow_html=True)
     if predicted_class==0:
@@ -80,7 +80,6 @@ if picture:
     prediction = model.predict(img_array)
     predicted_class=np.argmax(prediction, axis=1)
     print(predicted_class)
-
     
     if predicted_class==8:
          st.markdown("<div style='font-size: 56px; color: black; text-align: center'>Manzana</div>", unsafe_allow_html=True)

@@ -26,6 +26,13 @@ st.markdown("<div style='font-size: 56px; color: black; text-align: center'></di
 st.markdown("<div style='font-size: 26px; color: black; text-align: center'>Cuchara, Cucharon, Espatula, Filtro, Encendedor, cuchillo, tijeras, banano, manzana y huevo</div>", unsafe_allow_html=True)
 st.markdown("<div style='font-size: 56px; color: black; text-align: center'></div>", unsafe_allow_html=True)
 st.markdown("<div style='font-size:26px; color: black;'>Para realizar la predicción, tome la foto</div>", unsafe_allow_html=True)
+st.markdown("<div style='font-size: 56px; color: black; text-align: center'></div>", unsafe_allow_html=True)
+st.markdown("<div style='font-size: 56px; color: black; text-align: center'>O</div>", unsafe_allow_html=True)
+st.markdown("<div style='font-size: 56px; color: black; text-align: center'></div>", unsafe_allow_html=True)
+st.markdown("<div style='font-size: 56px; color: black; text-align: center'></div>", unsafe_allow_html=True)
+image_url = st.text_input("Enter the URL of the JPG image")
+if image_url:
+    st.image(image_url, caption='JPG Image from User Input URL', use_column_width=True)
 picture = st.camera_input("Por favor, tome una foto para utilizar el modelo.")
 
 if picture:

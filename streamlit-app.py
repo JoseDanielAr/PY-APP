@@ -36,7 +36,7 @@ if uploaded_file:
     st.image(uploaded_file)
     print("existe picture")
     with open ('input.jpg','wb') as file:
-          file.write(picture.getbuffer())
+          file.write(uploaded_file.getbuffer())
           print("se guardo foto")
     img = image.load_img('input.jpg', target_size=(150, 150))
     img_array = image.img_to_array(img) / 255.0

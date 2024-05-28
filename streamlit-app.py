@@ -30,8 +30,8 @@ st.markdown("<div style='font-size: 56px; color: black; text-align: center'></di
 st.markdown("<div style='font-size: 56px; color: black; text-align: center'>O</div>", unsafe_allow_html=True)
 st.markdown("<div style='font-size: 56px; color: black; text-align: center'></div>", unsafe_allow_html=True)
 st.markdown("<div style='font-size: 56px; color: black; text-align: center'></div>", unsafe_allow_html=True)
-image_url = st.text_input("Enter the URL of the JPG image")
 
+picture = st.camera_input("Por favor, tome una foto para utilizar el modelo.")
 if picture:
     st.image(picture)
     print("existe picture")

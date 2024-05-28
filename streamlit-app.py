@@ -7,11 +7,18 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
 from tensorflow.keras.optimizers import Adam
 print("se leyo librerias")
-
+import gdown
 import os
 import numpy as np
 
-model = load_model('model3.h5')
+file_url = 'https://drive.google.com/uc?id=1locdBqp8abUEl_NB_x8Q7tLEYOXute92'
+output_filename = 'model2.h5'
+
+gdown.download(file_url, output_filename, quiet=False)
+
+model = load_model(output_filename)
+
+#model = load_model('model2.h5')
 st.markdown("<div style='font-size: 56px; color: black; text-align: center'>Modelo para Clasificación de Imagenes</div>", unsafe_allow_html=True)
 st.markdown("<div style='font-size: 56px; color: black; text-align: center'></div>", unsafe_allow_html=True)
 st.markdown("<div style='font-size:26px; color: black;'>Este programa permite clasificar la imagen tomada en 10 categorias:</div>", unsafe_allow_html=True)
